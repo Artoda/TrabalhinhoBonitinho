@@ -1,0 +1,655 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  background-color: black;
+}
+
+#container {
+  flex: 1 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.banner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #461f0e;
+  gap: 10px;
+  height: 80px;
+}
+
+.menuNaive {
+  display: none;
+}
+
+.searchMB {
+  display: none;
+}
+
+.titleImage img {
+  width: 200px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search {
+  display: flex;
+}
+
+.searchButton {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+.searchButton img {
+  width: 100px;
+  height: 100%;
+}
+
+.carrinho {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+
+.carrinhoImagem {
+  width: 50px;
+}
+
+.carrinho .carrinhoButton {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.Compras {
+  background-color: white;
+  padding: 5px;
+  display: none;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 5px;
+  z-index: 99999;
+  position: absolute;
+  top: 57px;
+  min-width: 442px;
+  right: -63px;
+}
+
+.listaCompras {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.renderCart {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  gap: 7px;
+  width: 100%;
+}
+
+.livroNames {
+  font-size: 16px;
+}
+
+.livroSuggestion {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.btnplus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.btnminus {
+  cursor: pointer;
+}
+
+.btnRemove {
+  cursor: pointer;
+}
+.shoppingAll {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.shopping h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.preco {
+  font-size: 20px;
+}
+
+#end {
+  font-size: 16px;
+  --c: rgb(107, 58, 1); /* the color*/
+
+  box-shadow: 0 0 0 0.1em inset var(--c);
+  --_g: linear-gradient(var(--c) 0 0) no-repeat;
+  background: var(--_g) calc(var(--_p, 0%) - 100%) 0%,
+    var(--_g) calc(200% - var(--_p, 0%)) 0%,
+    var(--_g) calc(var(--_p, 0%) - 100%) 100%,
+    var(--_g) calc(200% - var(--_p, 0%)) 100%;
+  background-size: 50.5% calc(var(--_p, 0%) / 2 + 0.5%);
+  outline-offset: 0.1em;
+  transition: background-size 0.4s, background-position 0s 0.4s;
+}
+#end:hover {
+  --_p: 100%;
+  transition: background-position 0.4s, background-size 0s;
+}
+#end:active {
+  box-shadow: 0 0 9e9Q inset #0009;
+  background-color: var(--c);
+  color: #fff;
+}
+
+.search {
+  position: relative;
+}
+.searchTerm {
+  padding: 5px;
+  outline: none;
+  position: relative;
+  width: 500px;
+  z-index: 9999999;
+}
+
+.search input[type="submit"] {
+  border: 2px;
+  border-radius: 5px;
+  border-left: none;
+  background: none;
+  background-color: white;
+  color: #61290f;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#sugestoes {
+  background-color: white;
+  width: 500px;
+  position: absolute;
+  top: 39px;
+  padding: 5px;
+  display: none;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 5px;
+  z-index: 999999;
+}
+
+.preview {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+}
+
+.preview img {
+  cursor: pointer;
+}
+
+.headerBotton {
+  display: flex;
+  justify-content: space-around;
+  background-color: #8f5627;
+  padding: 10px;
+  border: #201e1e solid 2px;
+}
+
+#terrorB {
+  background-color: #434f66;
+}
+
+#mangaB {
+  background-color: #101010;
+}
+
+#acaoB {
+  background-color: #1c2421;
+}
+
+#romanceB {
+  background-color: #060406;
+}
+
+#fantasiaB {
+  background-color: #7d772e;
+}
+
+button:active {
+  transform: translateY(4px);
+}
+.button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+#home {
+  display: flex;
+  align-items: center;
+}
+#home img {
+  width: 200px;
+}
+
+#terror {
+  display: flex;
+  align-items: center;
+}
+#terror img {
+  width: 200px;
+}
+
+#acao {
+  display: flex;
+  align-items: center;
+}
+#acao img {
+  width: 200px;
+}
+
+#manga {
+  display: flex;
+  align-items: center;
+}
+#manga img {
+  width: 200px;
+}
+
+#romance {
+  display: flex;
+  align-items: center;
+}
+#romance img {
+  width: 200px;
+}
+
+#fantasia {
+  display: flex;
+  align-items: center;
+}
+#fantasia img {
+  width: 200px;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(/inputs/Biblioteca.jpg);
+  background-size: cover;
+}
+
+.terror {
+  background-image: url(/inputs/horror-pumpkins-halloween_1574941038.jpg);
+}
+
+.acao {
+  background-image: url(/inputs/Acao.jpg);
+  background-position: center;
+}
+
+.manga {
+  background-image: url(/inputs/wallpaperflare.com_wallpaper_1.jpg);
+}
+
+.romance {
+  background-image: url(/inputs/pexels-designecologist-887349.jpg);
+}
+
+.fantasia {
+  background-image: url(/inputs/fantasiaback.jpg);
+}
+
+.backGround {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.backGroundImage img {
+  width: 50%;
+}
+
+.livros {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.livro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  margin: 20px;
+  max-width: 300px;
+  max-height: fit-content;
+  background-color: #8f5627;
+  text-align: center;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.terror .livro {
+  background-color: rgba(255, 255, 255, 0.658);
+}
+
+.acao .livro {
+  background-color: #572121;
+}
+
+.manga .livro {
+  background-color: #101010;
+  color: white;
+}
+
+.romance .livro {
+  background-color: rgba(82, 21, 59, 0.52);
+  color: rgb(251, 223, 249);
+}
+
+.fantasia .livro {
+  background-color: rgba(8, 217, 8, 0.688);
+}
+
+.livro img {
+  width: 200px;
+}
+
+.livro h2 {
+  margin: 0%;
+}
+
+.livro #bookName {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.livro #resume {
+  width: 100%;
+  height: 100%;
+  font-weight: bolder;
+  text-align: justify;
+  font-size: 20px;
+  font-family: arial, sans-serif;
+}
+
+.shop {
+  background: #0066a2;
+  color: white;
+  border-style: outset;
+  border-color: #0066a2;
+  height: 40px;
+  width: 100px;
+  font: bold 15px arial, sans-serif;
+  text-shadow: none;
+  cursor: pointer;
+}
+
+.livro #shopButton {
+  margin-top: 15px;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  text-align: center;
+  height: 50px;
+  width: 100px;
+  text-shadow: none;
+}
+
+.livro #bookPrice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.footer {
+  width: 100%;
+  flex-shrink: 0;
+  background-color: #461f0e;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: row;
+}
+
+/* .desenvolvedores {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  padding: 10px;
+} */
+
+@media all and (max-width: 1400px) {
+  #home img {
+    width: 150px;
+  }
+
+  #terror img {
+    width: 150px;
+  }
+
+  #fantasia img {
+    width: 150px;
+  }
+
+  #manga img {
+    width: 150px;
+  }
+
+  #acao img {
+    width: 150px;
+  }
+
+  #romance img {
+    width: 150px;
+  }
+}
+
+@media all and (max-width: 1265px) {
+  .titulo {
+    position: relative;
+  }
+  /* .Compras {
+    top: 22px;
+    min-width: 391px;
+    right: 438px;
+  } */
+
+  #sugestoes {
+    top: 39px;
+  }
+}
+@media only all and (max-width: 1016px) {
+  .searchTerm {
+    width: 95%;
+  }
+  #sugestoes {
+    width: 182px;
+    top: 39px;
+    align-items: center;
+  }
+
+  .livroSuggestion {
+    display: none;
+  }
+
+  .Compras {
+    top: 56px;
+    min-width: 391px;
+    right: -40px;
+  }
+  .preview img {
+    width: 150px;
+  }
+  .headerBotton {
+    display: none;
+  }
+  .menuNaive {
+    display: block;
+    position: relative;
+    cursor: pointer;
+  }
+  .menuImage img {
+    position: absolute;
+    width: 50px;
+    top: -60px;
+    right: 201px;
+    cursor: pointer;
+  }
+  .headerBotton {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media only all and (max-width: 664px) {
+  .menuImage img {
+    position: absolute;
+    width: 30px;
+    top: -39px;
+    right: 186px;
+    cursor: pointer;
+  }
+
+  .carrinhoImagem {
+    position: absolute;
+    right: -36px;
+    top: -29px;
+    width: 30px;
+  }
+
+  .searchButton {
+    display: none;
+  }
+  .searchTerm {
+    display: none;
+    position: absolute;
+    right: -16px;
+    top: -31px;
+    width: 200px;
+  }
+  #sugestoes {
+    position: absolute;
+    right: -17px;
+    top: -3px;
+    width: 200px;
+  }
+  .search input[type="submit"] {
+    display: none;
+  }
+  .Compras {
+    top: 44px;
+    right: -38px;
+    min-width: fit-content;
+    align-items: center;
+  }
+
+  .livroNames {
+    display: none;
+  }
+
+  .shoppingAll {
+    justify-content: center;
+    min-width: 251px;
+    gap: 5px;
+  }
+
+  .identificator {
+    display: none;
+  }
+
+  .renderCart img {
+    width: 30px;
+  }
+
+  .preview img {
+    width: 150px;
+  }
+
+  .banner {
+    gap: 0;
+  }
+
+  .searchMB {
+    display: flex;
+    position: absolute;
+    top: -31px;
+    right: 187px;
+    cursor: pointer;
+  }
+  .searchMB img {
+    width: 30px;
+  }
+
+  .button {
+    border: 2px solid black;
+  }
+  .titleImage {
+    width: 179px;
+    padding: 0px;
+  }
+}
